@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 import "forge-std/Test.sol";
 import {Wallet} from "../src/Wallet.sol";
 
-contract AuthTest is Test {
+contract walletTest is Test {
     Wallet public wallet;
 
     function setUp() public {
