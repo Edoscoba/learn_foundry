@@ -34,7 +34,7 @@ contract sendEtherTest is Test {
         _send(123);
 
         // hoax
-        hoax(address(1),456);
+        hoax(address(1), 456);
         _send(456);
     }
 }

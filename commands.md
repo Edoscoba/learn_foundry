@@ -20,3 +20,5 @@ forge fmt
 
 CONSOLE LOGGING
 import "forge-std/console.sol => import it on the solidity or test file you want to use it. Note thatit is used for debugging purpose and remove it when you want to deploy
+
+
