@@ -10,35 +10,32 @@ interface IWETH {
 }
 
 contract ForkTest is Test {
-  IWETH public weth;
+    IWETH public weth;
 
-  function setUp() public {
-    weth = IWETH(address(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2));
-}
+    function setUp() public {
+        weth = IWETH(address(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2));
+    }
 
-    
-  function testDeposit() public {
-    // Check Ether balance before anything else
-    console.log("Ether balance of test contract before:", address(this).balance);
+    function testDeposit() public {
+        // Check Ether balance before anything else
+        console.log("Ether balance of test contract before:", address(this).balance);
 
-    // Optionally fund the contract
-    deal(address(this), 2 ether);
+        // Optionally fund the contract
+        deal(address(this), 2 ether);
 
-    uint256 balBefore = weth.balanceOf(address(this));
-    console.log("==================");
-     console.log("Ether balance of test contract before deposit:", address(this).balance);
-    console.log("WETH balance before deposit:", balBefore);
-console.log("==================");
-    weth.deposit{value: 1 ether}();
+        uint256 balBefore = weth.balanceOf(address(this));
+        console.log("==================");
+        console.log("Ether balance of test contract before deposit:", address(this).balance);
+        console.log("WETH balance before deposit:", balBefore);
+        console.log("==================");
+        weth.deposit{value: 1 ether}();
 
-    uint256 balAfter = weth.balanceOf(address(this));
-    console.log("WETH balance after deposit:", balAfter);
+        uint256 balAfter = weth.balanceOf(address(this));
+        console.log("WETH balance after deposit:", balAfter);
 
-    // Check Ether balance after deposit
-    console.log("Ether balance of test contract after:", address(this).balance);
+        // Check Ether balance after deposit
+        console.log("Ether balance of test contract after:", address(this).balance);
 
-    assertEq(balAfter, balBefore + 1 ether, "Deposit failed!");
-}
-
-
+        assertEq(balAfter, balBefore + 1 ether, "Deposit failed!");
+    }
 }

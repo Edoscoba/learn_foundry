@@ -56,7 +56,7 @@ contract GaslessTokenTransferTest is Test {
         assertEq(token.balanceOf(sender), expectedSenderBalance, "Sender balance does not match expected balance");
 
         uint256 initialReceiverBalance = 0;
-        uint256 expectedReceiverBalance = initialReceiverBalance + AMOUNT ;
+        uint256 expectedReceiverBalance = initialReceiverBalance + AMOUNT;
         assertEq(token.balanceOf(receiver), expectedReceiverBalance, "Receiver balance does not match expected balance");
 
         uint256 initialFeeCollectorBalance = 0;
