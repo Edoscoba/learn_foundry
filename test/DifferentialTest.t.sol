@@ -32,7 +32,5 @@ contract DifferentialTest is Test {
     }
 }
 
-
 // To run this file use below
 // FOUNDRY_FUZZ_RUNS=100 forge test --match-path test/DifferentialTest.t.sol --ffi -vvv
-
