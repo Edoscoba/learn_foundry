@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
 pragma solidity ^0.8.17;
+
 import "forge-std/Test.sol";
 import "forge-std/console.sol";
 import "../interfaces/IUniswapV2Router.sol";
@@ -20,8 +21,8 @@ contract SwapTokenForExactTokenTest is Test {
     function testSwapTokenForExactToken() public {
         address TOKEN_HOLDER = 0xf584F8728B874a6a5c7A8d4d387C9aae9172D621;
         uint256 deadline = block.timestamp + 60; // Add 60 seconds to current block timestamp
-        uint256  usdcAmountOut = 100e6;
-    uint256  daiAmountInMax = 150e18;
+        uint256 usdcAmountOut = 100e6;
+        uint256 daiAmountInMax = 150e18;
         address[] memory path = new address[](2);
         path[0] = address(dai);
         path[1] = address(usdc);
@@ -34,10 +35,10 @@ contract SwapTokenForExactTokenTest is Test {
         // 打印交换前的余额
         console.log("DAI balance before swap:", daiBalanceBefore);
         console.log("USDC balance before swap:", usdcBalanceBefore);
-console.log("=========================================================");
-   console.log("=========================================================");
+        console.log("=========================================================");
+        console.log("=========================================================");
         // Approve the router to spend the token
-       dai.approve(address(router), daiAmountInMax);
+        dai.approve(address(router), daiAmountInMax);
 
         // Perform the swap
         router.swapTokensForExactTokens(usdcAmountOut, daiAmountInMax, path, TOKEN_HOLDER, deadline);
@@ -49,6 +50,5 @@ console.log("=========================================================");
         // 打印交换后的余额
         console.log("DAI balance after swap:", daiBalanceAfter);
         console.log("USDC balance after swap:", usdcBalanceAfter);
-        
     }
 }

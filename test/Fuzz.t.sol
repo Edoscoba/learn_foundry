@@ -44,17 +44,15 @@ contract FuzzTest is Test {
         assertGe(x, 1);
         assertLe(x, 10); // Assert x <= 10
 
-
         uint256 i = b.mostSignificantBit(x);
         assertEq(i, mostSignificantBit(x));
     }
 
     function testStats(uint256 x) public {
-    x = bound(x, 1, 10); // Restrict x to [1, 10]
-    console.log("Input: ", x);
+        x = bound(x, 1, 10); // Restrict x to [1, 10]
+        console.log("Input: ", x);
 
-    // Collect stats
-    emit log_named_uint("Input Distribution", x);
-}
-
+        // Collect stats
+        emit log_named_uint("Input Distribution", x);
+    }
 }

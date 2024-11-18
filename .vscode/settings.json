@@ -5,5 +5,7 @@
     "solmate"
   ],
   "Codegeex.RepoIndex": true,
-  "Codegeex.SidebarUI.LanguagePreference": "English"
+  "Codegeex.SidebarUI.LanguagePreference": "English",
+  "turboConsoleLog.delimiterInsideMessage": "~",
+  "turboConsoleLog.wrapLogMessage": true
 }
