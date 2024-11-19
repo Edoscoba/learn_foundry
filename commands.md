@@ -34,4 +34,12 @@ url = "https://eth-mainnet.g.alchemy.com/v2/nsXvKew2RkxJEbcXLlWa3DcbaUAncLhC"
 ===> CONSOLE LOGGING <====
 import "forge-std/console.sol => import it on the solidity or test file you want to use it. Note that it is used for debugging purpose and remove it when you want to deploy
 
+====>COMMAND TO LOAD THE .ENV FILE AND DEPLOY SMART-CONTRACT<====
+source .env
+// stimulation environment
+forge script script/Token.s.sol:TokenScript  --rpc-url $LISK_RPC_URL
+// mainnet environment
+forge script script/Token.s.sol:TokenScript --rpc-url $LISK_RPC_URL --broadcast --verify
+
+
 

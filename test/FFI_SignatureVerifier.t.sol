@@ -21,16 +21,10 @@ contract FFITest is Test {
         bytes memory result = vm.ffi(cmds);
 
         // Parse the JSON-encoded output
-        (bytes memory signature, address expectedSigner) = abi.decode(
-            result,
-            (bytes, address)
-        );
+        (bytes memory signature, address expectedSigner) = abi.decode(result, (bytes, address));
 
         // Hash the message using the same method as the Python script
-        bytes32 messageHash = keccak256(abi.encodePacked(
-            "\x19Ethereum Signed Message:\n15", 
-            "Hello, Foundry!"
-        ));
+        bytes32 messageHash = keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n15", "Hello, Foundry!"));
 
         // Recover the signer
         address signer = verifier.verify(messageHash, signature);

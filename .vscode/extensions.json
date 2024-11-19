@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "visualstudioexptteam.vscodeintellicode",
-    "aminer.codegeex"
+    "aminer.codegeex",
+    "usernamehw.errorlens"
   ]
 }
